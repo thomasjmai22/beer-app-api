@@ -1,0 +1,51 @@
+h1 {
+  margin: 25px;
+}
+
+form {
+  margin: 25px;
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+body {
+  background-color: greenyellow;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pear-pic {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.slogan {
+  font-size: 50px;
+  font-family: Comic Sans MS;
+}
+
+h1,
+form,
+h2,
+.food-section {
+  text-align: center;
+  font-family: Comic Sans MS;
+}
+
+.max-results {
+  max-width: 10px;
+}
+
+.additionalInfo {
+  display: none;
+}
+
+.food-hidden {
+  display: none;
+}
