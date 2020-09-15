@@ -1,23 +1,23 @@
-h1 {
-  margin: 25px;
-}
-
-form {
-  margin: 25px;
-}
-
-img {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-body {
-  background-color: greenyellow;
+* {
+  box-sizing: border-box;
 }
 
 header {
   display: flex;
   flex-wrap: wrap;
+  margin-left: ;
+}
+
+body {
+  background-color: rgb(71, 219, 128);
+}
+
+.container {
+  margin-left: 25px;
+  border: 0;
+  height: 3px;
+  background: #095484;
+  background-image: linear-gradient(to right, #ccc, #095484, #ccc);
 }
 
 .pear-pic {
@@ -30,22 +30,37 @@ header {
   font-family: Comic Sans MS;
 }
 
-h1,
-form,
-h2,
-.food-section {
-  text-align: center;
+form {
+  display: inline-block;
+}
+
+#results p {
   font-family: Comic Sans MS;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 25px;
 }
 
-.max-results {
-  max-width: 10px;
+#beer-selection {
+  display: inline-block;
 }
 
-.additionalInfo {
-  display: none;
+#results-list {
+  list-style-type: none;
 }
 
-.food-hidden {
-  display: none;
+.beer-pic {
+  max-width: 300px;
+  max-height: 300px;
+  float: right;
+  margin-right: 100px;
+}
+
+hr,
+.food_pairing {
+  border-bottom: 5px solid #095484;
+}
+
+p {
+  max-width: 70%;
 }

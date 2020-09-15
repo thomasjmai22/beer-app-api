@@ -22,18 +22,9 @@ function displayResults(responseJson) {
     $("#results-list").append(
       `<li>
               <h3>${beer.name}</h3>
+              <img class="beer-pic" src='${beer.image_url}'>
               <p>${beer.tagline}</p>
               <p>${beer.description}</p>
-              <div class="food_pairing">
-                <h4>Food Pairings (click for recipe):</h4>
-                ${beer.food_pairing
-                  .map(
-                    (food_pairing) =>
-                      `<p><a class="food-pairing-api" href="">${food_pairing}</a></p>`
-                  )
-                  .join("")}
-              </div>
-              <img src='${beer.image_url}'>
               <section class="additionalInfo">
               <p>Hops:</p>
               <ul>${beer.ingredients.hops
@@ -48,8 +39,21 @@ function displayResults(responseJson) {
                   : "<li>None Listed</li>"
               }</ul>
               
+              <p>PRO TIPS:</p>
               <p>${beer.brewers_tips}</p>
               </section>
+              <div class="food_pairing">
+              
+                <h4>Food Pairings (click for recipe):</h4>
+                ${beer.food_pairing
+                  .map(
+                    (food_pairing) =>
+                      `<p><a class="food-pairing-api" href="">${food_pairing}</a></p>`
+                  )
+                  .join("")}
+              </div>
+              
+              
               `
     );
   });
