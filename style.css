@@ -35,7 +35,7 @@ h4,
 .title {
   font-size: 65px;
   font-family: Comic Sans MS;
-  -webkit-text-stroke: 3.5px black;
+  -webkit-text-stroke: 2px black;
 }
 
 .subtitle {
@@ -74,7 +74,7 @@ form {
   max-width: 500px;
   max-height: 400px;
   float: right;
-  margin-right: 50px;
+  /* margin-right: 50px; */
 }
 
 #tip {
@@ -110,4 +110,14 @@ a {
 
 input[type="number"] {
   width: 45px;
+}
+
+@media only screen and (max-width: 600px) {
+  .beer-pic {
+    display: inline;
+    max-width: 200px;
+    max-height: 200px;
+    float: none;
+    margin-left: 25px;
+  }
 }

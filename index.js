@@ -22,8 +22,9 @@ function displayResults(responseJson) {
     $("#results-list").append(
       `<li class="list">
               <h3>${beer.name}</h3>
-              <img class="beer-pic" src='${beer.image_url}'>
+              
               <p class="tagline">${beer.tagline}</p>
+              <img class="beer-pic" src='${beer.image_url}'>
               <p><span class="title-descrip">Description: </span>${
                 beer.description
               }</p>
