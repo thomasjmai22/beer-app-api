@@ -12,12 +12,14 @@ body {
   background-color: rgb(71, 219, 128);
 }
 
+h3 {
+  margin-top: 55px;
+}
+h4 {
+  font-size: 18px;
+}
 .container {
   margin-left: 25px;
-  border: 0;
-  height: 3px;
-  background: #095484;
-  background-image: linear-gradient(to right, #ccc, #095484, #ccc);
 }
 
 .pear-pic {
@@ -53,14 +55,9 @@ form {
   max-width: 300px;
   max-height: 300px;
   float: right;
-  margin-right: 100px;
-}
-
-hr,
-.food_pairing {
-  border-bottom: 5px solid #095484;
+  margin-right: 50px;
 }
 
 p {
-  max-width: 70%;
+  max-width: 60%;
 }

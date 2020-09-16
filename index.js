@@ -24,7 +24,7 @@ function displayResults(responseJson) {
               <h3>${beer.name}</h3>
               <img class="beer-pic" src='${beer.image_url}'>
               <p>${beer.tagline}</p>
-              <p>${beer.description}</p>
+              <p>Description: ${beer.description}</p>
               <section class="additionalInfo">
               <p>Hops:</p>
               <ul>${beer.ingredients.hops
@@ -39,8 +39,7 @@ function displayResults(responseJson) {
                   : "<li>None Listed</li>"
               }</ul>
               
-              <p>PRO TIPS:</p>
-              <p>${beer.brewers_tips}</p>
+              <p>PRO TIP: ${beer.brewers_tips}</p>
               </section>
               <div class="food_pairing">
               
