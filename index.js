@@ -2,11 +2,8 @@
 
 const searchURL = "https://api.punkapi.com/v2/beers";
 const foodURL = "https://api.edamam.com/search";
-//api.edamam.com/search?q=chicken&app_id=&app_key=
-//api.edamam.com/search?api_key=494bc5476292aed774e95c7f72f7cc6e&api_id=2ab32599&q=Spicy%20chicken%20tikka%20masala
 const app_key = "494bc5476292aed774e95c7f72f7cc6e";
 const app_id = "2ab32599";
-// const randomURL = "https://api.punkapi.com/v2/beers/random";
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -15,6 +12,7 @@ function formatQueryParams(params) {
   return queryItems.join("&");
 }
 
+//Function to call json with parameters requested and to map objects within params
 function displayResults(responseJson) {
   console.log(responseJson);
   $("#results-list").empty();
@@ -53,16 +51,13 @@ function displayResults(responseJson) {
                       `<p><a class="food-pairing-api" href="">${food_pairing}</a></p>`
                   )
                   .join("")}
-              </div>
-              
-              
-              `
+              </div>`
     );
   });
   //display the results section
   $("#results").removeClass("hidden");
 }
-//FOOD
+//FOOD API edamam to Food Paring in Beer API
 function displayFoodResults(responseJson, el) {
   console.log(responseJson);
   const recipeURL = responseJson.hits[0].recipe.url;
@@ -73,7 +68,7 @@ function displayFoodResults(responseJson, el) {
     .attr("target", "_blank");
 }
 
-//FOOD
+//FOOD API Parameter
 function getFood(q, el) {
   const foodParams = {
     q,
@@ -88,7 +83,7 @@ function getFood(q, el) {
     "Access-Control-Allow-Credentials": true,
   };
 
-  //FOOD
+  //FOOD Fetch Edamam API and access
   fetch(url, options, {
     mode: "no-cors",
     accept: "application/json",
@@ -102,18 +97,15 @@ function getFood(q, el) {
 }
 
 console.log(foodURL);
+//Function for beer api parameters
+function getBeerList(per_page = 25) {
+  const params = { per_page };
 
-//function getRandomBeer(beer_name = "", per_page = 25) {
-function getRandomBeer(per_page = 25) {
-  const params = { per_page }; // {per_page: 25}
-  /*if (beer_name != "") {
-    params["beer_name"] = beer_name.replace(" ", "_");
-  }*/
-
-  const queryString = formatQueryParams(params); // per_page=25
+  const queryString = formatQueryParams(params);
   const url = searchURL + "?" + queryString;
   console.log(url);
 
+  //Fetch beer api and check agains errors
   fetch(url)
     .then((response) => {
       if (response.ok) {
@@ -122,25 +114,12 @@ function getRandomBeer(per_page = 25) {
       throw new Error(response.statusText);
     })
     .then((responseJson) => displayResults(responseJson))
-    // .then((responseJson) => getRandomBeer(responseJson))
     .catch((err) => {
       $("#js-error-message").text(`Something went wrong: ${err.message}`);
     });
-
-  //   fetch(randomURL)
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response.json();
-  //       }
-  //       throw new Error(response.statusText);
-  //     })
-  //     .then((responseJson) => getRandomBeer(responseJson))
-  //     .catch((err) => {
-  //       $("#js-error-message").text(`Something went wrong: ${err.message}`);
-  //     });
 }
 
-//FOOD
+//FOOD Edamam api to be targeted when clicking food_pairing on beer api
 function watchFoodClick() {
   $("body").on("click", ".food_pairing a.food-pairing-api", (e) => {
     e.preventDefault();
@@ -149,19 +128,20 @@ function watchFoodClick() {
   });
 }
 
+//Event listener when input submitted to return results with beer API params to results section
 function watchForm() {
   $("form").submit((event) => {
     event.preventDefault();
     const maxResults = $("#max-results").val();
-    //const beer_name = $("#beer_name").val();
-    //getRandomBeer(beer_name, maxResults);
-    getRandomBeer(maxResults);
+    getBeerList(maxResults);
   });
 }
 
+//Function combining event listeners
 function main() {
   watchForm();
   watchFoodClick();
 }
 
+//Calling both even listeners for beer api and food api
 $(main);
