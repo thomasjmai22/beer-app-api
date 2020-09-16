@@ -23,14 +23,16 @@ function displayResults(responseJson) {
       `<li>
               <h3>${beer.name}</h3>
               <img class="beer-pic" src='${beer.image_url}'>
-              <p>${beer.tagline}</p>
-              <p>Description: ${beer.description}</p>
+              <p class="tagline">${beer.tagline}</p>
+              <p><span class="title-descrip">Description: </span>${
+                beer.description
+              }</p>
               <section class="additionalInfo">
-              <p>Hops:</p>
+              <p class="title-descrip">Hops:</p>
               <ul>${beer.ingredients.hops
                 .map((hop) => `<li>${hop.name} - ${hop.attribute}</li>`)
                 .join("")}</ul>
-              <p>Malts:</p>
+              <p class="title-descrip">Malts:</p>
               <ul>${
                 beer.ingredients.malt
                   ? beer.ingredients.malt
@@ -39,7 +41,7 @@ function displayResults(responseJson) {
                   : "<li>None Listed</li>"
               }</ul>
               
-              <p>PRO TIP: ${beer.brewers_tips}</p>
+              <p id="tip">PRO TIP: ${beer.brewers_tips}</p>
               </section>
               <div class="food_pairing">
               

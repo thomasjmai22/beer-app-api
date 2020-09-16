@@ -9,14 +9,18 @@ header {
 }
 
 body {
-  background-color: rgb(71, 219, 128);
+  background-color: rgba(2, 2, 2, 0.774);
+  color: yellowgreen;
 }
 
 h3 {
   margin-top: 55px;
+  font-size: 28px;
 }
-h4 {
-  font-size: 18px;
+
+h4,
+.beer-choice {
+  font-size: 20px;
 }
 .container {
   margin-left: 25px;
@@ -27,13 +31,26 @@ h4 {
   max-height: 150px;
 }
 
-.slogan {
-  font-size: 50px;
+.title-box {
+  margin-top: -45px;
+}
+
+.title {
+  font-size: 65px;
   font-family: Comic Sans MS;
+  -webkit-text-stroke: 3.5px black;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-family: Comic Sans MS;
+  max-width: 100%;
+  margin-top: -55px;
 }
 
 form {
   display: inline-block;
+  margin-top: 50px;
 }
 
 #results p {
@@ -52,12 +69,41 @@ form {
 }
 
 .beer-pic {
-  max-width: 300px;
-  max-height: 300px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  max-width: 500px;
+  max-height: 400px;
   float: right;
   margin-right: 50px;
 }
 
-p {
-  max-width: 60%;
+#tip {
+  max-width: 70%;
+}
+
+.food-pairing,
+a {
+  color: blue;
+  font-size: 16px;
+}
+
+ul {
+  margin-top: -15px;
+}
+
+.tagline {
+  margin-top: -25px;
+}
+
+.title-descrip {
+  color: rgb(40, 168, 158);
+  /* -webkit-text-stroke: 1px black; */
+}
+
+#tip {
+  color: black;
+}
+
+input[type="number"] {
+  width: 35px;
 }
