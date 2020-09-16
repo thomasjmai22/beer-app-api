@@ -14,16 +14,13 @@ body {
 }
 
 h3 {
-  margin-top: 55px;
+  margin-top: 15px;
   font-size: 28px;
 }
 
 h4,
 .beer-choice {
   font-size: 20px;
-}
-.container {
-  margin-left: 25px;
 }
 
 .pear-pic {
@@ -32,7 +29,7 @@ h4,
 }
 
 .title-box {
-  margin-top: -45px;
+  margin-top: -40px;
 }
 
 .title {
@@ -45,12 +42,13 @@ h4,
   font-size: 20px;
   font-family: Comic Sans MS;
   max-width: 100%;
-  margin-top: -55px;
+  margin-top: -75px;
 }
 
 form {
   display: inline-block;
   margin-top: 50px;
+  margin-left: 20px;
 }
 
 #results p {
@@ -66,6 +64,8 @@ form {
 
 #results-list {
   list-style-type: none;
+  padding: 5px 5px 5px;
+  margin: 10px 10px 10px;
 }
 
 .beer-pic {
@@ -85,10 +85,14 @@ form {
 a {
   color: blue;
   font-size: 16px;
+  margin-top: -15px;
 }
 
-ul {
-  margin-top: -15px;
+.list {
+  border: solid 5px yellow;
+  margin-bottom: 25px;
+  padding: 20px 20px;
+  border-radius: 30px;
 }
 
 .tagline {
@@ -97,7 +101,7 @@ ul {
 
 .title-descrip {
   color: rgb(40, 168, 158);
-  /* -webkit-text-stroke: 1px black; */
+  margin-bottom: 3px;
 }
 
 #tip {
@@ -105,5 +109,5 @@ ul {
 }
 
 input[type="number"] {
-  width: 35px;
+  width: 45px;
 }

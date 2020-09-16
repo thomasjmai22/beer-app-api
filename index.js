@@ -20,7 +20,7 @@ function displayResults(responseJson) {
   $("#results-list").empty();
   responseJson.forEach((beer) => {
     $("#results-list").append(
-      `<li>
+      `<li class="list">
               <h3>${beer.name}</h3>
               <img class="beer-pic" src='${beer.image_url}'>
               <p class="tagline">${beer.tagline}</p>
