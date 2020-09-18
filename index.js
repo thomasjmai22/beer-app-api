@@ -14,7 +14,6 @@ function formatQueryParams(params) {
 
 //Function to call json with parameters requested and to map objects within params
 function displayResults(responseJson) {
-  console.log(responseJson);
   $("#results-list").empty();
   responseJson.forEach((beer) => {
     $("#results-list").append(
@@ -59,7 +58,6 @@ function displayResults(responseJson) {
 }
 //FOOD API edamam to Food Paring in Beer API
 function displayFoodResults(responseJson, el) {
-  console.log(responseJson);
   const recipeURL = responseJson.hits[0].recipe.url;
   window.open(recipeURL);
   $(el)
@@ -90,20 +88,17 @@ function getFood(q, el) {
     "Content-Type": "application/json",
   })
     .then((response) => {
-      //console.log(response);
       return response.json();
     })
     .then((responseJson) => displayFoodResults(responseJson, el));
 }
 
-console.log(foodURL);
 //Function for beer api parameters
 function getBeerList(per_page = 25) {
   const params = { per_page };
 
   const queryString = formatQueryParams(params);
   const url = searchURL + "?" + queryString;
-  console.log(url);
 
   //Fetch beer api and check agains errors
   fetch(url)
