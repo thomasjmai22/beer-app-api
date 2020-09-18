@@ -10,3 +10,5 @@ their meal.
 
 This app was built using HTML, CSS, JavaScript, JQuery and utilizing two different API's called PunkAPI for the beer and Edamam for the recipes. 
 
+Screenshot of app: https://github.com/thomasjmai22/beer-app-api/issues/1#issue-704675769
+
